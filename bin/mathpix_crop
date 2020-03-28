@@ -19,7 +19,9 @@ mode=${1:-latex}
 [[ "$mode" = 'latex' ]] || [[ "$mode" = "text" ]] || (echo "$HELP" >&2 && exit 1)
 image_file=/tmp/screenshot
 rm -r "$image_file"
-scrot -s "${image_file}"
+# TODO: add an if which decides between scrot and screencapture based on OS
+# scrot -s "${image_file}" 
+screencapture -i "${image_file}"
 image=$(base64 -w 0 "${image_file}" )
 response=$(curl \
     https://api.mathpix.com/v3/${mode} \

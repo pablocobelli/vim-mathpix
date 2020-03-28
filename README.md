@@ -14,7 +14,9 @@ text generated from the image you crop on your screen.
 
 ## Install 
 
-Make sure you have installed, `curl`, `jq` (like `sed` but for `json`), and `scrot`.
+Make sure you have installed, `curl`, `jq` (like `sed` but for `json`). In macos, the screen
+capture is performed by invoking the built-in `screencapture`, whereas in Linux
+systems this is done with `scrot`, so make sure you have it installed.
 
 If you are using pathogen, just clone the Repo under bundle, and make sure you copy the
 `bin` directory content to an directory on `PATH`.
