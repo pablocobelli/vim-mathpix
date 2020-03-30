@@ -22,7 +22,7 @@ rm -r "$image_file"
 # TODO: add an if which decides between scrot and screencapture based on OS
 # scrot -s "${image_file}" 
 screencapture -i "${image_file}"
-image=$(base64 -w 0 "${image_file}" )
+image=$(base64 -b 0 "${image_file}" )
 response=$(curl \
     https://api.mathpix.com/v3/${mode} \
     -X POST \
