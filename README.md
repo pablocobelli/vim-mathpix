@@ -7,6 +7,13 @@ repository, I wrote a script that uses `scrot`, `curl`, and `jq`, to submit a `P
 request to the _Mathpix_ API, in order to convert the selected image in to \Latex, or
 regular text depending on the argument.
 
+## Mods I introduced to the original  so that it runs on Mac
+
+- in the executable, changed `scrot` for `screencapture -i`.
+- in the executable, changed `base64 -w` for `base64 -b`, because the `-w`
+  flag for `base64` in Mac is named `-b`.
+- in the vim autoload plugin, hard-wired (yeah, it's bad!) the path to the executable [to be corrected later]
+
 ## Usage
 
 Execute the command `Img2Latex` or `Img2Text` and it will insert on your current line, 
